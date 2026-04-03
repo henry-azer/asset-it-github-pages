@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asset It — Private Wealth & Budget Tracker</title>
+  <meta name="description" content="Track currencies, gold, stocks, bank accounts, and more — fully offline with AES-256 encryption. Privacy-first wealth tracker.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Asset It — Private Wealth & Budget Tracker">
+  <meta property="og:description" content="Track currencies, gold, stocks, bank accounts, and more — fully offline with AES-256 encryption. Privacy-first wealth tracker.">
+  <meta property="og:image" content="assets/logo-dark.png">
+  <meta property="og:url" content="https://henry-azer.github.io/asset-it-app/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    .hero { display: flex; align-items: center; gap: 4rem; padding-top: 8rem; }
+    .hero__content { flex: 1; }
+    .hero__content h1 { margin-bottom: 1.25rem; }
+    .hero__content > p { font-size: 1.15rem; margin-bottom: 2rem; }
+    .hero__visual { flex: 0 0 300px; }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+    .features-grid .card { text-align: center; }
+    .features-grid .card svg { width: 48px; height: 48px; color: var(--primary); margin-bottom: 1rem; }
+    .features-grid .card h3 { margin-bottom: 0.5rem; color: var(--text-primary); }
+    .screenshots-section { background: linear-gradient(180deg, var(--bg), var(--surface)); }
+    .screenshots-section h2 { text-align: center; margin-bottom: 2rem; }
+    .cta-section { background: linear-gradient(135deg, #6366F1, #8B5CF6); color: #fff; text-align: center; }
+    .cta-section h2 { color: #fff; }
+    .cta-section p { color: rgba(255,255,255,0.85); margin-bottom: 2rem; }
+    .cta-section .store-badges { justify-content: center; }
+    @media (max-width: 768px) {
+      .hero { flex-direction: column; text-align: center; padding-top: 6rem; gap: 2rem; }
+      .hero__visual { flex: none; width: 100%; display: flex; justify-content: center; }
+      .hero .store-badges { justify-content: center; }
+      .features-grid { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       Nav Bar
+       ============================================================ -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand">
+        <img src="assets/logo-light.png" alt="Asset It" data-logo>
+        <span>Asset It</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#screenshots">Screenshots</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="privacy-policy.html">Privacy</a></li>
+        <li>
+          <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </li>
+      </ul>
+      <button class="nav__toggle" onclick="toggleMobileNav()" aria-label="Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="nav__mobile-menu">
+    <a href="#features" onclick="closeMobileNav()">Features</a>
+    <a href="#screenshots" onclick="closeMobileNav()">Screenshots</a>
+    <a href="#download" onclick="closeMobileNav()">Download</a>
+    <a href="support.html" onclick="closeMobileNav()">Support</a>
+    <a href="privacy-policy.html" onclick="closeMobileNav()">Privacy</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme" style="align-self: flex-start;">
+      <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+
+  <!-- ============================================================
+       Hero Section
+       ============================================================ -->
+  <section class="section">
+    <div class="container hero">
+      <div class="hero__content">
+        <h1>Your wealth. Your device. Your privacy.</h1>
+        <p>Track currencies, gold, stocks, bank accounts, and more — fully offline with AES-256 encryption.</p>
+        <div class="store-badges">
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+          </a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="phone-frame">
+          <img src="assets/screenshots/dark/14.png" alt="Asset It Dashboard">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Features Section
+       ============================================================ -->
+  <section class="section" id="features">
+    <div class="container">
+      <h2>Everything you need to track your wealth</h2>
+      <div class="features-grid">
+
+        <!-- 1. 7 Asset Types -->
+        <div class="card fade-in">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"/>
+            <path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/>
+            <path d="M18 12a2 2 0 0 0 0 4h4v-4h-4z"/>
+          </svg>
+          <h3>7 Asset Types</h3>
+          <p>Currencies, gold, stocks, bank accounts, credit cards, cash, and loans — all in one place.</p>
+        </div>
+
+        <!-- 2. Live Market Data -->
+        <div class="card fade-in">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+            <polyline points="16 7 22 7 22 13"/>
+          </svg>
+          <h3>Live Market Data</h3>
+          <p>Real-time currency rates, gold prices, and stock tracking with smart multi-source fallback.</p>
+        </div>
+
+        <!-- 3. Military-Grade Security -->
+        <div class="card fade-in">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+          <h3>Military-Grade Security</h3>
+          <p>AES-256-GCM encryption, Face ID, and 100% local storage. Your data never leaves your device.</p>
+        </div>
+
+        <!-- 4. Budget Tracking -->
+        <div class="card fade-in">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="2" width="16" height="20" rx="2"/>
+            <line x1="8" y1="6" x2="16" y2="6"/>
+            <line x1="16" y1="14" x2="16" y2="18"/>
+            <line x1="8" y1="10" x2="8" y2="10"/>
+            <line x1="12" y1="10" x2="12" y2="10"/>
+            <line x1="16" y1="10" x2="16" y2="10"/>
+            <line x1="8" y1="14" x2="8" y2="14"/>
+            <line x1="12" y1="14" x2="12" y2="14"/>
+            <line x1="8" y1="18" x2="8" y2="18"/>
+            <line x1="12" y1="18" x2="12" y2="18"/>
+          </svg>
+          <h3>Budget Tracking</h3>
+          <p>Track salary, categorize spending, and monitor your budget with visual breakdowns.</p>
+        </div>
+
+        <!-- 5. iCloud Sync -->
+        <div class="card fade-in">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+          </svg>
+          <h3>iCloud Sync</h3>
+          <p>Encrypted backup and seamless multi-device sync on iOS. Your data stays in your iCloud.</p>
+        </div>
+
+        <!-- 6. Bilingual -->
+        <div class="card fade-in">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <h3>Bilingual</h3>
+          <p>Full English and Arabic support with native RTL layout and localized content.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Screenshots Section
+       ============================================================ -->
+  <section class="screenshots-section section" id="screenshots">
+    <div class="container">
+      <h2>See Asset It in action</h2>
+      <div class="carousel">
+        <div class="carousel__track">
+
+          <!-- Slide 1: Dashboard -->
+          <div class="carousel__slide">
+            <div class="phone-frame">
+              <img src="assets/screenshots/dark/14.png" alt="Dashboard — Dark Mode">
+            </div>
+            <div class="phone-frame">
+              <img src="assets/screenshots/light/14.png" alt="Dashboard — Light Mode">
+            </div>
+          </div>
+
+          <!-- Slide 2: Assets Manager -->
+          <div class="carousel__slide">
+            <div class="phone-frame">
+              <img src="assets/screenshots/dark/13.png" alt="Assets Manager — Dark Mode">
+            </div>
+            <div class="phone-frame">
+              <img src="assets/screenshots/light/13.png" alt="Assets Manager — Light Mode">
+            </div>
+          </div>
+
+          <!-- Slide 3: Finance Manager -->
+          <div class="carousel__slide">
+            <div class="phone-frame">
+              <img src="assets/screenshots/dark/9.png" alt="Finance Manager — Dark Mode">
+            </div>
+            <div class="phone-frame">
+              <img src="assets/screenshots/light/9.png" alt="Finance Manager — Light Mode">
+            </div>
+          </div>
+
+          <!-- Slide 4: Salary Manager -->
+          <div class="carousel__slide">
+            <div class="phone-frame">
+              <img src="assets/screenshots/dark/16.png" alt="Salary Manager — Dark Mode">
+            </div>
+            <div class="phone-frame">
+              <img src="assets/screenshots/light/16.png" alt="Salary Manager — Light Mode">
+            </div>
+          </div>
+
+        </div>
+        <div class="carousel__dots">
+          <button aria-label="Slide 1"></button>
+          <button aria-label="Slide 2"></button>
+          <button aria-label="Slide 3"></button>
+          <button aria-label="Slide 4"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Download CTA Section
+       ============================================================ -->
+  <section class="cta-section section" id="download">
+    <div class="container">
+      <h2>Ready to take control of your wealth?</h2>
+      <p>Download Asset It for free and start tracking your finances privately.</p>
+      <div class="store-badges">
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Footer
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <!-- Col 1: Brand -->
+        <div>
+          <div class="footer__brand">
+            <img src="assets/logo-light.png" alt="Asset It" data-logo>
+            <span>Asset It</span>
+          </div>
+          <p class="footer__tagline">Private wealth & budget tracker</p>
+        </div>
+
+        <!-- Col 2: Links -->
+        <div>
+          <h4>Links</h4>
+          <ul class="footer__links">
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="support.html">Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Developer -->
+        <div>
+          <h4>Developer</h4>
+          <ul class="footer__links">
+            <li>Henry Azer</li>
+            <li><a href="https://www.linkedin.com/in/henry-azer" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com/henry-azer" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 Asset It. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
