@@ -10,7 +10,7 @@
   <meta property="og:title" content="Asset It — Private Wealth & Budget Tracker">
   <meta property="og:description" content="Track currencies, gold, stocks, bank accounts, and more — fully offline with AES-256 encryption. Privacy-first wealth tracker.">
   <meta property="og:image" content="assets/logo-dark.png">
-  <meta property="og:url" content="https://henry-azer.github.io/asset-it-app/">
+  <meta property="og:url" content="https://henry-azer.github.io/asset-it-github-pages/">
   <meta property="og:type" content="website">
 
   <link rel="stylesheet" href="css/styles.css">
@@ -23,7 +23,7 @@
     .hero__visual { flex: 0 0 300px; }
     .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
     .features-grid .card { text-align: center; }
-    .features-grid .card svg { width: 48px; height: 48px; color: var(--primary); margin-bottom: 1rem; }
+    .features-grid .card svg { color: var(--primary); }
     .features-grid .card h3 { margin-bottom: 0.5rem; color: var(--text-primary); }
     .screenshots-section { background: linear-gradient(180deg, var(--bg), var(--surface)); }
     .screenshots-section h2 { text-align: center; margin-bottom: 2rem; }
@@ -88,7 +88,7 @@
   <!-- ============================================================
        Hero Section
        ============================================================ -->
-  <section class="section">
+  <section class="section hero-bg">
     <div class="container hero">
       <div class="hero__content">
         <h1>Your wealth. Your device. Your privacy.</h1>
@@ -115,74 +115,89 @@
        ============================================================ -->
   <section class="section" id="features">
     <div class="container">
-      <h2>Everything you need to track your wealth</h2>
+      <div class="section__header">
+        <h2>Everything you need to track your wealth</h2>
+        <p>From currencies to stocks, everything you need in one secure place.</p>
+      </div>
       <div class="features-grid">
 
         <!-- 1. 7 Asset Types -->
         <div class="card fade-in">
-          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"/>
-            <path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/>
-            <path d="M18 12a2 2 0 0 0 0 4h4v-4h-4z"/>
-          </svg>
+          <div class="icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"/>
+              <path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/>
+              <path d="M18 12a2 2 0 0 0 0 4h4v-4h-4z"/>
+            </svg>
+          </div>
           <h3>7 Asset Types</h3>
           <p>Currencies, gold, stocks, bank accounts, credit cards, cash, and loans — all in one place.</p>
         </div>
 
         <!-- 2. Live Market Data -->
         <div class="card fade-in">
-          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
-            <polyline points="16 7 22 7 22 13"/>
-          </svg>
+          <div class="icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+              <polyline points="16 7 22 7 22 13"/>
+            </svg>
+          </div>
           <h3>Live Market Data</h3>
           <p>Real-time currency rates, gold prices, and stock tracking with smart multi-source fallback.</p>
         </div>
 
         <!-- 3. Military-Grade Security -->
         <div class="card fade-in">
-          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            <path d="M9 12l2 2 4-4"/>
-          </svg>
+          <div class="icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
           <h3>Military-Grade Security</h3>
           <p>AES-256-GCM encryption, Face ID, and 100% local storage. Your data never leaves your device.</p>
         </div>
 
         <!-- 4. Budget Tracking -->
         <div class="card fade-in">
-          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="4" y="2" width="16" height="20" rx="2"/>
-            <line x1="8" y1="6" x2="16" y2="6"/>
-            <line x1="16" y1="14" x2="16" y2="18"/>
-            <line x1="8" y1="10" x2="8" y2="10"/>
-            <line x1="12" y1="10" x2="12" y2="10"/>
-            <line x1="16" y1="10" x2="16" y2="10"/>
-            <line x1="8" y1="14" x2="8" y2="14"/>
-            <line x1="12" y1="14" x2="12" y2="14"/>
-            <line x1="8" y1="18" x2="8" y2="18"/>
-            <line x1="12" y1="18" x2="12" y2="18"/>
-          </svg>
+          <div class="icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="2" width="16" height="20" rx="2"/>
+              <line x1="8" y1="6" x2="16" y2="6"/>
+              <line x1="16" y1="14" x2="16" y2="18"/>
+              <line x1="8" y1="10" x2="8" y2="10"/>
+              <line x1="12" y1="10" x2="12" y2="10"/>
+              <line x1="16" y1="10" x2="16" y2="10"/>
+              <line x1="8" y1="14" x2="8" y2="14"/>
+              <line x1="12" y1="14" x2="12" y2="14"/>
+              <line x1="8" y1="18" x2="8" y2="18"/>
+              <line x1="12" y1="18" x2="12" y2="18"/>
+            </svg>
+          </div>
           <h3>Budget Tracking</h3>
           <p>Track salary, categorize spending, and monitor your budget with visual breakdowns.</p>
         </div>
 
         <!-- 5. iCloud Sync -->
         <div class="card fade-in">
-          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
-          </svg>
+          <div class="icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+            </svg>
+          </div>
           <h3>iCloud Sync</h3>
           <p>Encrypted backup and seamless multi-device sync on iOS. Your data stays in your iCloud.</p>
         </div>
 
         <!-- 6. Bilingual -->
         <div class="card fade-in">
-          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <line x1="2" y1="12" x2="22" y2="12"/>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-          </svg>
+          <div class="icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
           <h3>Bilingual</h3>
           <p>Full English and Arabic support with native RTL layout and localized content.</p>
         </div>
@@ -196,7 +211,10 @@
        ============================================================ -->
   <section class="screenshots-section section" id="screenshots">
     <div class="container">
-      <h2>See Asset It in action</h2>
+      <div class="section__header">
+        <h2>See Asset It in action</h2>
+        <p>Light and dark themes, designed for clarity.</p>
+      </div>
       <div class="carousel">
         <div class="carousel__track">
 
@@ -242,10 +260,10 @@
 
         </div>
         <div class="carousel__dots">
-          <button aria-label="Slide 1"></button>
-          <button aria-label="Slide 2"></button>
-          <button aria-label="Slide 3"></button>
-          <button aria-label="Slide 4"></button>
+          <button class="carousel__dot" aria-label="Slide 1"></button>
+          <button class="carousel__dot" aria-label="Slide 2"></button>
+          <button class="carousel__dot" aria-label="Slide 3"></button>
+          <button class="carousel__dot" aria-label="Slide 4"></button>
         </div>
       </div>
     </div>
